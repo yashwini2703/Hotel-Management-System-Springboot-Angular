@@ -1,0 +1,22 @@
+<h2>Hotels </h2>
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Hotel Name</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody> 
+        <tr *ngFor = "let hotel of hotels">
+        <td>{{ hotel.hotelname }} </td>
+        <td>{{ hotel.city }}</td>
+        <td>
+            <button (click) = "updateHotel(hotel.hid)" class = "btn btn-info"> Update</button>
+            <button (click) = "deleteHotel(hotel.hid)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button (click) = "HotelDetails(hotel.hid)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

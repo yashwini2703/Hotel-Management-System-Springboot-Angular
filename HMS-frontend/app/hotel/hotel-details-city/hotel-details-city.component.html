@@ -1,0 +1,32 @@
+<!-- hotel-details-city.component.html -->
+
+<h2>Hotels in {{ city }}</h2>
+
+<div *ngIf="hotels.length > 0; else noHotels">
+  
+<table class="table ">
+  <thead>
+      <tr>
+          <th>Hotel Name</th>
+          <th>City</th>
+          <th>Actions</th>
+      </tr>
+  </thead>
+
+  <tbody> 
+      <tr *ngFor = "let hotel of hotels">
+      <td>{{ hotel.hotelname }} </td>
+      <td>{{ hotel.city }}</td>
+      <td>
+          <button (click) = "HotelDetails(hotel.hid)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+      </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+
+ 
+<ng-template #noHotels>
+  <p>No hotels found for {{ city }}</p>
+</ng-template>

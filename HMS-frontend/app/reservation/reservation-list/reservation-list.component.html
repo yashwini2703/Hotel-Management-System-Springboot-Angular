@@ -1,0 +1,43 @@
+<h2>Reservations</h2>
+<table class="table ">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>City</th>
+            <th>Pincode</th>
+            <th>CheckInDate</th>
+            <th>CheckOutDate</th>
+            <th>RoomType</th>
+            <th>Adults</th>
+            <th>Childrens</th>
+            <th>Hotel</th>
+        </tr>
+    </thead>
+
+    <tbody> 
+        <tr *ngFor="let reservations of reservation">
+            <td>{{ reservations.firstName }}</td>
+            <td>{{ reservations.lastName }}</td>
+            <td>{{ reservations.address }}</td>
+            <td>{{ reservations.state }}</td>
+            <td>{{ reservations.emailAddress }}</td>
+            <td>{{ reservations.phoneNumber }}</td>
+            <td>{{ reservations.city }}</td>
+            <td>{{ reservations.pincode }}</td>
+            <td>{{ reservations.checkInDate | date:'yyyy-MM-dd' }}</td>
+            <td>{{ reservations.checkOutDate | date:'yyyy-MM-dd' }}</td>
+            <td>{{ reservations.roomType }}</td>
+            <td>{{ reservations.adults }}</td>
+            <td>{{ reservations.childrens }}</td>
+            <td>{{ reservations.hotel.hotelname }}</td>
+            <button (click) = "deleteReservation(reservations.rsvid)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+
+        </tr>
+    </tbody>
+</table>
+

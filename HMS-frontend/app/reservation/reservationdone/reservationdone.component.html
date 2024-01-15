@@ -1,0 +1,24 @@
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            Reservation Details
+        </div>
+        <div class="card-body">
+            <ng-container *ngIf="reservation && reservation.hotel">
+                <h5 class="card-title">Hotel: {{ reservation.hotel.hotelname }}</h5>
+                <p class="card-text">Name: {{ reservation.firstName }} {{ reservation.lastName }}</p>
+                <p class="card-text"></p>
+                <p class="card-text">Check-in Date: {{ reservation.checkInDate }}</p>
+                <p class="card-text">Check-out Date: {{ reservation.checkOutDate }}</p>
+                <!-- Add more details as needed -->
+        
+                <hr>
+              </ng-container>
+            <hr>
+
+            <p class="card-text">Thank you for your registration!</p>
+      
+            <p><a routerLink="/home">Click here to go back to homepage</a></p>
+    </div>
+</div>

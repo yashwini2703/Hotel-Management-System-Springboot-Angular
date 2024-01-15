@@ -1,0 +1,94 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <span class="badge bg-secondary">
+<form #form="ngForm" (ngSubmit) = "onSubmit()">
+  
+  <div class="row g-2">
+    <div class="col-md">
+    <label for="firstname" class="form-label">First Name:</label>
+    <input type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]= "reservation.firstName"  />
+  </div>
+  <div class="col-md"> 
+    <label for="LastName" class="form-label">Last Name:</label>
+    <input type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]= "reservation.lastName" />
+</div></div>
+    <label for="address" class="form-label">Address:</label>
+    <input type="textarea" class="form-control" name="address" id="address" [(ngModel)]= "reservation.address"  />
+    <div class="row g-3">
+      <div class="col-md">
+    <label for="city" class="form-label">City:</label>
+    <input type="text" class="form-control" name="city" id="city" [(ngModel)]= "reservation.city" />
+</div>
+<div class="col-md">
+    <label for="State" class="form-label">State:</label>
+    <input type="text" class="form-control" name="state" id="state" [(ngModel)]= "reservation.state"  />
+  </div>
+<div class="col-md">
+    <label for="Pincode" class="form-label">Pincode:</label>
+    <input type="text" class="form-control" name="pincode" id="pincode" [(ngModel)]= "reservation.pincode" />
+</div>
+</div>
+<div class="form-group">
+  <label for="hotel">Select Hotel:</label>
+  <select class="form-control" id="hotel" [(ngModel)]="reservation.hotel.hid" name="hotel">
+    <option *ngFor="let hotel of hotels" [value]="hotel.hid">{{ hotel.hotelname }}</option>
+  </select>
+</div>
+
+<div class="row g-2">
+  <div class="col-md">
+    <label for="phone" class="form-label">Phone Number:</label>
+    <input type="phone" class="form-control" name="phoneNumber" id="phoneNumber" [(ngModel)]= "reservation.phoneNumber"  />
+</div>
+<div class="col-md">
+    <label for="email" class="form-label">Email Address:</label>
+    <input type="email" class="form-control" name="emailAddress" id="emailAddress" [(ngModel)]= "reservation.emailAddress"  />
+</div></div>
+
+
+<div class="row g-2">
+  <div class="col-md">
+    <label for="checkInDate" class="form-label">Check-In Date:</label>
+    <input type="date" class="form-control" name="checkInDate" id="checkInDate" [(ngModel)]= "reservation.checkInDate"  />
+  </div>
+  <div class="col-md">
+    <label for="checkOutDate" class="form-label">Check-Out Date:</label>
+    <input type="date" class="form-control" name="checkOutDate" id="checkOutDate" [(ngModel)]= "reservation.checkOutDate" />
+</div></div>
+    <label for="roomtype" class="form-label">RoomType:</label>
+   <select class="form-select" name="roomType" id="roomType"  [(ngModel)]= "reservation.roomType" >
+    
+    <option value="Single" selected>Single</option>
+    <option value="Double">Double</option>
+    <option value="Triple">Triple</option>
+  </select>
+
+   <label for="adults" class="form-label">Number of Adults:</label>
+<select class="form-select" id="adults" name="adults" [(ngModel)]= "reservation.adults">
+  <option value="1">1 </option>
+  <option value="2">2 </option>
+  <option value="3">3 </option>
+  <option value="4">4 </option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select>
+
+<label for="children" class="form-label">Number of Children:</label>
+<select class="form-select" id="childrens" name="childrens" [(ngModel)]= "reservation.childrens">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<br>
+<div class="text-center p-2">
+  <input type="submit" value="SUBMIT" class="btn btn-info">
+</div>
+  </form></span>
+</div>
