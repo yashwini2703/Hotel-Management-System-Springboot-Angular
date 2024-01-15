@@ -1,0 +1,14 @@
+
+.carousel img {
+    max-height: 700px;
+    margin: 0 auto;
+    opacity:0.5;
+
+}
+
+#search{
+    margin: 0;
+    height: 30px;
+    width: 30px;
+}
+
